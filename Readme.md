@@ -7,9 +7,8 @@ Clone the repository
 git clone https://github.com/puravparab/DavisCourseSearch.git
 cd DavisCourseSearch
 ```
-
 ### API
-#### Without Docker
+#### Without Docker:
 Run virtual environment using pipenv
 ```
 cd api
@@ -21,6 +20,7 @@ pipenv sync
 Rename .env.template to .env and enter your credentials
 
 Run the following commands
+(You might have to restart the virtual environment to load the env variables)
 ```
 python manage.py collectstatic
 python manage.py migrate
@@ -28,5 +28,5 @@ python manage.py migrate
 
 Run the server at http://127.0.0.1:8000 or http://localhost:8000
 ```
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 ```
