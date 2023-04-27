@@ -48,6 +48,12 @@ INSTALLED_APPS = [
 
 	# djanog-cors-headers
 	'corsheaders',
+
+	# django-rest-framework
+	'rest_framework',
+
+	# API app
+	'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -126,6 +132,11 @@ CORS_ALLOW_METHODS = [
 	'POST'
 ]
 
+REST_FRAMEWORK = {
+	'DEFAULT_RENDERER_CLASSES': (
+		'rest_framework.renderers.JSONRenderer',
+	)
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -152,5 +163,13 @@ STATIC_ROOT = Path(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# OPEN AI
+OPEN_AI = os.getenv('OPENAI')
+
+# PINECONE
+PINECONE = os.getenv('PINECONE')
+PINECONE_ENV = os.getenv('PINECONE_ENV')
+PINECONE_NAMESPACE = os.getenv('PINECONE_NAMESPACE')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

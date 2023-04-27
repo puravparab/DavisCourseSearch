@@ -8,6 +8,15 @@ django = "==4.2"
 python-dotenv = "*"
 whitenoise = "*"
 django-cors-headers = "*"
+djangorestframework = "*"
+requests = "*"
+openai = "*"
+pinecone-client = "*"
+matplotlib = "*"
+plotly = "==5.14.1"
+pandas = "*"
+scipy = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
