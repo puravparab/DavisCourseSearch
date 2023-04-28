@@ -103,7 +103,19 @@ const CourseSearch = () => {
 				{showError && <span>{inputError}</span>}
 				<p>Press enter to search</p>
 
+				<div className={styles.promptOptionsContainer}>
+					<div className={styles.promptOptionsGreen} onClick={()=>{setPrompt("Biology and Programming")}}>
+						Biology and Programming
+					</div>
+					<div className={styles.promptOptionsBlue} onClick={()=>{setPrompt("AI and Robotics")}}>
+						AI and Robotics
+					</div>
+					<div className={styles.promptOptionsOrange} onClick={()=>{setPrompt("Business and Machine Learning")}}>
+						Business and Machine Learning
+					</div>
+				</div>
 			</div>
+
 			<div className={styles.courseContainer}>
 				{showLoading && <p>Loading courses ...</p>}
 				{!showLoading && coursesList}

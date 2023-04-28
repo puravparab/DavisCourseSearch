@@ -37,6 +37,55 @@
 	color: rgb(243, 81, 4);
 }
 
+.promptOptionsContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 20px 20px;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 10px 0px;
+}
+/* Prompt options */
+.promptOptionsGreen{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background: rgb(13, 86, 4);
+}
+.promptOptionsBlue{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background: rgb(0, 70, 131);
+}
+.promptOptionsOrange{
+	display: flex;
+	flex-direction: column;
+	color: white;
+	padding: 10px 15px;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background: rgb(193, 83, 66);
+}
+
+
 /* DISPLAY COURSES */
 .courseContainer{
 	display: flex;
