@@ -6,7 +6,7 @@ from rest_framework.decorators import api_view
 from . import prompt_utils
 from . import pinecone_utils
 
-# Sematic search
+# Semantic search
 @api_view(['POST'])
 def get_courses(request, format=None):
 	prompt = request.data.get("prompt")
