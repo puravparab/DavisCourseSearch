@@ -27,12 +27,14 @@ def clean_response(query_response):
 	response = []
 	for course in query_response["matches"]:
 		code = course["metadata"]["code"]
+		name = course["metadata"]["name"]
 		credits = course["metadata"]["credits"]
 		description = course["metadata"]["description"]
 		prerequisites = course["metadata"]["prerequisites"]
 
 		response.append({
 			"code": code,
+			"name": name,
 			"credits": credits,
 			"description": description,
 			"prerequisites": prerequisites

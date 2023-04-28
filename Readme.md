@@ -56,7 +56,7 @@ SERVER_URL=http://localhost:8000/
 
 Run client
 ```
-npm run start
+npm run dev
 ```
 
 ---
