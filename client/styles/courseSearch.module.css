@@ -1,0 +1,28 @@
+.courseSearchContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.searchContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0px;
+	width: 100%;
+}
+
+.searchContainer input{
+	max-width: 500px;
+	width: 95%;
+	padding: 12px 14px;
+	font-size: 18px;
+	color: white;
+	background: rgb(42, 42, 42);
+	outline: none;
+	border: none;
+	border-radius: 14px;
+}
