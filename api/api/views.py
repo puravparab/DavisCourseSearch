@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
 from . import prompt_utils
+from . import pinecone_utils
 
 # Sematic search
 @api_view(['POST'])
@@ -23,7 +24,17 @@ def get_courses(request, format=None):
 			status=status.HTTP_500_INTERNAL_SERVER_ERROR
 		)
 
+	# Query Pinecone
+	response, message = pinecone_utils.query_pinecone(
+		settings.PINECONE_INDEX, 10, settings.PINECONE_NAMESPACE, embedding_vector
+	)
+	if not response:
+		return Response(
+			{"prompt": prompt, "response": response, "message": message}, 
+			status=status.HTTP_500_INTERNAL_SERVER_ERROR
+		)
+
 	return Response(
-		{"prompt": prompt, "embedding": embedding_vector, "message": "Embedding successfully generated"}, 
+		{"prompt": prompt, "courses": str(response), "message": message}, 
 		status=status.HTTP_200_OK
 	)

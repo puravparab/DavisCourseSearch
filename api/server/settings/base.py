@@ -170,6 +170,7 @@ OPEN_AI = os.getenv('OPENAI')
 # PINECONE
 PINECONE = os.getenv('PINECONE')
 PINECONE_ENV = os.getenv('PINECONE_ENV')
+PINECONE_INDEX = os.getenv('PINECONE_INDEX')
 PINECONE_NAMESPACE = os.getenv('PINECONE_NAMESPACE')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
