@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Header from '../components/Header.js'
 import CourseSearch from '../components/CourseSearch.js'
+import Footer from '../components/Footer.js'
 import styles from '../styles/home.module.css'
 
 const Home = () => {
@@ -27,6 +28,7 @@ const Home = () => {
 			<div className={styles.homeContainer}>
 				<Header />
 				<CourseSearch />
+				<Footer />
 			</div>
 		</>
 	)

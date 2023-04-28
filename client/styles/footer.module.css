@@ -1,0 +1,14 @@
+.footerContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0px 20px 0px;
+}
+.footerContainer a{
+	font-size: 20px;
+	color: rgb(183, 183, 183);
+}
+.footerContainer a:hover{
+	color: rgb(255, 255, 255);
+}
