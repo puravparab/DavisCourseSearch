@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import getConfig from 'next/config';
 
 import axios from 'axios';
+import CourseCard from '../components/CourseCard.js'
 import styles from '../styles/courseSearch.module.css'
 
 const { publicRuntimeConfig } = getConfig();
@@ -15,7 +16,16 @@ const CourseSearch = () => {
 
 	// Loading Courses
 	const [showLoading, setShowLoading] = useState(false)
+	const [coursesList, setCoursesList] = useState("")
+	const [courseUpdate, setCourseUpdate] = useState("")
 
+	 useEffect(() => {
+		if (courseUpdate !== ""){
+			setCoursesList(createCourseCard(courseUpdate))
+		}
+	 },[courseUpdate])
+
+	// Check if user prompt is valid
 	const validateInput = (prompt) => {
 		if (typeof(prompt) != "string"){
 			setInputError("Prompt should be a string!")
@@ -32,6 +42,7 @@ const CourseSearch = () => {
 		return true
 	}
 
+	// Run if user presses the enter key
 	const handleKeyDown = (e) => {
 		if (e.key === "Enter") {
 			e.preventDefault()
@@ -44,22 +55,39 @@ const CourseSearch = () => {
 					.then((response) => {
 						// Remove loading text
 						setShowLoading(false)
-						console.log(response.data)
+						setCourseUpdate(response.data)
 					})
 					.catch((error) => {
-						console.log(erro)
+						console.log(error)
 					})
 			}
 			else{
 				setShowError(true)
 			}
-
 			// Show loading text until response from server is recieved
 			setShowLoading(true)
 		}
 	}
+
+	// Run whenever user starts to type
 	const handleInputChange = (e) => {
 		setPrompt(e.target.value)
+	}
+
+	// Create cards to display each course
+	const createCourseCard = (data) => {
+		return data.courses.map((course, id) =>{
+			return (
+				<CourseCard 
+					code={course.code}
+					name={course.name}
+					credits={course.credits}
+					description={course.description}
+					prerequisites={course.prerequisites}
+					key={id}
+				/>
+			)
+		})
 	}
 
 	return (
@@ -78,6 +106,7 @@ const CourseSearch = () => {
 			</div>
 			<div className={styles.courseContainer}>
 				{showLoading && <p>Loading courses ...</p>}
+				{!showLoading && coursesList}
 			</div>
 		</div>
 	)
