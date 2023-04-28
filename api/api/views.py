@@ -35,6 +35,6 @@ def get_courses(request, format=None):
 		)
 
 	return Response(
-		{"prompt": prompt, "courses": str(response), "message": message}, 
+		{"prompt": prompt, "courses": response, "message": message}, 
 		status=status.HTTP_200_OK
 	)

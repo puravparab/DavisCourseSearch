@@ -3,4 +3,7 @@ module.exports = {
 		locales: ['en'],
 		defaultLocale: 'en',
 	},
+	publicRuntimeConfig: {
+		SERVER_URL:  process.env.SERVER_URL,
+	},
 }
