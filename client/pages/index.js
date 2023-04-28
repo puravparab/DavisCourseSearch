@@ -16,12 +16,12 @@ const Home = () => {
 				/>
 				{/* <link rel="canonical" href="/" /> */}
 				<meta property="og:title" content="Davis Course Search" />
-				<meta property="og:url" content="" />
+				<meta property="og:url" content="https://daviscoursesearch.vercel.app/" />
 				<meta 
 					property="og:description" 
 					content="Semantic searching for UC Davis Courses"
 				/>
-				<meta name="twitter:site" content="" />
+				<meta name="twitter:site" content="https://daviscoursesearch.vercel.app/" />
 				<meta name="twitter:description" content="Semantic searching for UC Davis Courses" />
 			</Head>
 
