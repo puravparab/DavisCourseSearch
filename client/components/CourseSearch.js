@@ -60,14 +60,42 @@ const CourseSearch = () => {
 					.catch((error) => {
 						// console.log(error)
 					})
+
+				// Show loading text until response from server is received
+				setShowLoading(true)
 			}
 			else{
 				setShowError(true)
 			}
-			// Show loading text until response from server is recieved
-			setShowLoading(true)
 		}
 	}
+
+	// Run if user presses the submit button
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		setShowError(false)
+
+		// If input is valid send request to api
+		if (validateInput(prompt)){
+			const url = publicRuntimeConfig.SERVER_URL + "api/"
+			axios.post(url, { prompt: prompt})
+				.then((response) => {
+					// Remove loading text
+					setShowLoading(false)
+					setCourseUpdate(response.data)
+				})
+				.catch((error) => {
+					// console.log(error)
+				})
+
+			// Show loading text until response from server is received
+			setShowLoading(true)
+		}
+		else{
+			setShowError(true)
+		}
+	}
+
 
 	// Run whenever user starts to type
 	const handleInputChange = (e) => {
@@ -93,15 +121,19 @@ const CourseSearch = () => {
 	return (
 		<div className={styles.courseSearchContainer}>
 			<div className={styles.searchContainer}>
-				<input 
-					placeholder="Biology and computers ..."
-					maxLength="100"
-					value={prompt}
-					onChange={handleInputChange}
-					onKeyDown={handleKeyDown}
-				/>
+				<div className={styles.searchInput}>
+					<input 
+						placeholder="Biology and computers ..."
+						maxLength="100"
+						value={prompt}
+						onChange={handleInputChange}
+						onKeyDown={handleKeyDown}
+					/>
+					<button onClick={handleSubmit}>Search</button>
+				</div>
+				
 				{showError && <span>{inputError}</span>}
-				<p>Press enter to search</p>
+				{/* <p>Press enter to search</p> */}
 
 				<div className={styles.promptOptionsContainer}>
 					<div className={styles.promptOptionsGreen} onClick={()=>{setPrompt("Biology and Programming")}}>

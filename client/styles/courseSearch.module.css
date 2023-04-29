@@ -16,7 +16,15 @@
 	width: 100%;
 }
 
-.searchContainer input{
+.searchInput{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0px 20px;
+	width: 100%;
+} 
+.searchInput input{
 	max-width: 500px;
 	width: 95%;
 	padding: 12px 14px;
@@ -28,7 +36,21 @@
 	border-radius: 14px;
 	margin: 5px 0px;
 }
-.searchContainer p{
+.searchInput button{
+	color: white;
+	background: rgb(13, 86, 4);
+	font-size: 20px;
+	border: none;
+	border-radius: 12px;
+	padding: 6px 10px;
+	cursor: pointer;
+}
+.searchInput button:hover{
+	background: rgb(19, 133, 5);
+}
+
+
+.searchInput p{
 	font-size: 16px;
 	color: rgb(141, 141, 141);
 }
