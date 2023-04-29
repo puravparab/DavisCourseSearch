@@ -1,13 +1,11 @@
 # Davis Course Search
-Sematic searching the entire catalogue of UC Davis Courses
-[Course Data][course_data]
+Sematic searching the entire catalogue of UC Davis [courses][course_data]
 
----
 
 ## Requirements
-- python 10
-- node v18.16.0
-- npm 9.5.1
+- `python 3.10`
+- `node v18.16.0`
+- `npm 9.5.1`
 - OpenAI API
 - Pinecone Vector DB
 
