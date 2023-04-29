@@ -17,6 +17,7 @@ plotly = "==5.14.1"
 pandas = "*"
 scipy = "*"
 scikit-learn = "*"
+gunicorn = "*"
 
 [dev-packages]
 
