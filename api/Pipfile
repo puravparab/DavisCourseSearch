@@ -18,6 +18,7 @@ pandas = "*"
 scipy = "*"
 scikit-learn = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

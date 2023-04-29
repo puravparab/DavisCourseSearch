@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 
 from . import prompt_utils
 from . import pinecone_utils
+from .models import SearchLog
 
 # Semantic search
 @api_view(['POST'])
@@ -15,6 +16,13 @@ def get_courses(request, format=None):
 	valid, message = prompt_utils.validate_prompt(prompt)
 	if not valid:
 		return Response({"error": message}, status=status.HTTP_400_BAD_REQUEST)
+
+	# Add prompt to seachLog in DB
+	try:
+		search = SearchLog.objects.create(prompt=prompt)
+		search.save()
+	except Exception as e:
+		 pass
 
 	# Get embedding
 	embedding_vector, message = prompt_utils.embedding(prompt)
