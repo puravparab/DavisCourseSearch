@@ -58,6 +58,8 @@ const CourseSearch = () => {
 						setCourseUpdate(response.data)
 					})
 					.catch((error) => {
+						// Remove loading text if api request error
+						setShowLoading(false)
 						// console.log(error)
 					})
 
@@ -85,6 +87,8 @@ const CourseSearch = () => {
 					setCourseUpdate(response.data)
 				})
 				.catch((error) => {
+					// Remove loading text if api request error
+					setShowLoading(false)
 					// console.log(error)
 				})
 

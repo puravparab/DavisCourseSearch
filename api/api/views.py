@@ -26,7 +26,7 @@ def get_courses(request, format=None):
 
 	# Query Pinecone
 	response, message = pinecone_utils.query_pinecone(
-		settings.PINECONE_INDEX, 10, settings.PINECONE_NAMESPACE, embedding_vector
+		settings.PINECONE_INDEX, 15, settings.PINECONE_NAMESPACE, embedding_vector
 	)
 	if not response:
 		return Response(
