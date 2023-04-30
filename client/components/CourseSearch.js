@@ -127,7 +127,7 @@ const CourseSearch = () => {
 			<div className={styles.searchContainer}>
 				<div className={styles.searchInput}>
 					<input 
-						placeholder="Biology and computers ..."
+						placeholder="I want to learn web design ..."
 						maxLength="100"
 						value={prompt}
 						onChange={handleInputChange}
@@ -137,7 +137,9 @@ const CourseSearch = () => {
 				</div>
 				
 				{showError && <span>{inputError}</span>}
-				{/* <p>Press enter to search</p> */}
+
+				{/*  Options  */}
+				<p>Or try these options</p>
 
 				<div className={styles.promptOptionsContainer}>
 					<div className={styles.promptOptionsGreen} onClick={()=>{setPrompt("Biology and Programming")}}>
