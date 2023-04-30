@@ -142,13 +142,13 @@ const CourseSearch = () => {
 				<p>Or try these options</p>
 
 				<div className={styles.promptOptionsContainer}>
-					<div className={styles.promptOptionsGreen} onClick={()=>{setPrompt("Biology and Programming")}}>
+					<div className={styles.promptOptions1} onClick={()=>{setPrompt("Biology and Programming")}}>
 						Biology and Programming
 					</div>
-					<div className={styles.promptOptionsBlue} onClick={()=>{setPrompt("AI and Robotics")}}>
+					<div className={styles.promptOptions2} onClick={()=>{setPrompt("AI and Robotics")}}>
 						AI and Robotics
 					</div>
-					<div className={styles.promptOptionsOrange} onClick={()=>{setPrompt("Business and Machine Learning")}}>
+					<div className={styles.promptOptions3} onClick={()=>{setPrompt("Business and Machine Learning")}}>
 						Business and Machine Learning
 					</div>
 				</div>
